@@ -1,10 +1,11 @@
 package controller
 
 import (
-	"go-todo/model"
-	"go-todo/service"
 	"net/http"
 	"strconv"
+
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
+	"example.com/hello/Documents/SE-Projects/go-todo/service"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
@@ -62,7 +63,7 @@ func (h *TaskController) UpdateTaskController(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload"})
 		return
 	}
-	err = h.TaskService.updatedTask(id, &updatedTask)
+	err = h.TaskService.UpdateTask(id, &updatedTask)
 	if err != nil {
 		if gorm.IsRecordNotFoundError(err) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Task Not Found"})

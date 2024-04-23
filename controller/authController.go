@@ -1,10 +1,11 @@
 package controller
 
 import (
-	"go-todo/model"
-	"go-todo/service"
-	"go-todo/utils"
 	"net/http"
+
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
+	"example.com/hello/Documents/SE-Projects/go-todo/service"
+	"example.com/hello/Documents/SE-Projects/go-todo/utils"
 
 	"github.com/gin-gonic/gin"
 )

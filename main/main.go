@@ -1,17 +1,17 @@
 package main
 
 import (
-	"go-todo/controller"
-	"go-todo/db"
-	"go-todo/repository"
-	"go-todo/service"
-	"go-todo/utils"
+	"example.com/hello/Documents/SE-Projects/go-todo/controller"
+	"example.com/hello/Documents/SE-Projects/go-todo/db"
+	"example.com/hello/Documents/SE-Projects/go-todo/repository"
+	"example.com/hello/Documents/SE-Projects/go-todo/service"
+	"example.com/hello/Documents/SE-Projects/go-todo/utils"
 
 	"github.com/gin-gonic/gin"
 )
 
 func init() {
-	db.InitDB
+	db.InitDB()
 }
 
 func main() {
@@ -35,7 +35,9 @@ func main() {
 	protected.GET("/tasks", taskController.GetTasksController)
 	protected.GET("/task/:id", taskController.GetTaskController)
 	protected.PUT("/task/:id", taskController.UpdateTaskController)
-	protected.POST("/task", taskController.CreateTasksController)
+	protected.POST("/task", taskController.CreateTaskController)
 	protected.DELETE("/task/:id", taskController.DeleteTaskController)
+
+	r.Run(":9000")
 
 }

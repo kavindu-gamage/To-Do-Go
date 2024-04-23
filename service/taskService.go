@@ -1,8 +1,8 @@
 package service
 
 import (
-	"go-todo/model"
-	"go-todo/repository"
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
+	"example.com/hello/Documents/SE-Projects/go-todo/repository"
 )
 
 type TaskService struct {

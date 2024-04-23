@@ -2,9 +2,10 @@ package service
 
 import (
 	"errors"
-	"go-todo/model"
-	"go-todo/repository"
-	"go-todo/utils"
+
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
+	"example.com/hello/Documents/SE-Projects/go-todo/repository"
+	"example.com/hello/Documents/SE-Projects/go-todo/utils"
 )
 
 type UserService struct {
@@ -12,7 +13,7 @@ type UserService struct {
 }
 
 func (s *UserService) RegisterUser(user *model.User) error {
-	hashedPassword, err := utils.hashedPassword(user.Password)
+	hashedPassword, err := utils.HashPassword(user.Password)
 	if err != nil {
 		return err
 	}

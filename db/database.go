@@ -3,6 +3,7 @@ package db
 import (
 	"log"
 
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
@@ -19,6 +20,8 @@ func InitDB() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	db.AutoMigrate(&model.User{})
+	db.AutoMigrate(&model.Task{})
 }
 
 // return the database instance

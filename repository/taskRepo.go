@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"go-todo/model"
+	"example.com/hello/Documents/SE-Projects/go-todo/model"
 
 	"github.com/jinzhu/gorm"
 )
