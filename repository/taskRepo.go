@@ -22,7 +22,7 @@ func (r *TaskRepository) FindTaskByID(id int) (*model.Task, error) {
 	return &task, nil
 }
 
-func (r *TaskRepository) FindAllTask() ([]model.Task, error) {
+func (r *TaskRepository) FindAllTasks() ([]model.Task, error) {
 	tasks := []model.Task{}
 	err := r.DB.Find(&tasks).Error
 	if err != nil {
